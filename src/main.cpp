@@ -130,8 +130,7 @@ Audio audio;
 bool playing;
 
 // Display callback to flush the buffer to screen
-void display_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p)
-{
+void display_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p){
     uint32_t w = (area->x2 - area->x1 + 1);
     uint32_t h = (area->y2 - area->y1 + 1);
 
@@ -144,19 +143,14 @@ void display_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color
 }
 
 // Touchpad callback to read the touchpad
-void touchpad_read(lv_indev_drv_t *indev_driver, lv_indev_data_t *data)
-{
+void touchpad_read(lv_indev_drv_t *indev_driver, lv_indev_data_t *data){
     uint16_t touchX, touchY;
     bool touched = tft.getTouch(&touchX, &touchY);
 
-    if (!touched)
-    {
+    if (!touched){
         data->state = LV_INDEV_STATE_REL;
-    }
-    else
-    {
+    }else{
         data->state = LV_INDEV_STATE_PR;
-
         // Set the coordinates
         data->point.x = touchX;
         data->point.y = touchY;
@@ -191,8 +185,7 @@ void guiHandler(){
 }
 #endif
 
-void wakeup_reason()
-{
+void wakeup_reason(){
   esp_sleep_wakeup_cause_t wakeup_reason;
 
   wakeup_reason = esp_sleep_get_wakeup_cause();
@@ -280,9 +273,10 @@ void setup() {
   ui_init();
   openStart();
   //checked_statusbar(ui_sdcardIcon, statusSd);
-  checked_sdcard(statusSdCard);
+  // checked_sdcard(statusSdCard);
   // checked_wifi(false);
-
+  if(statusSdCard)statusBar_show_icon(ui_sdcardIcon);
+  else statusBar_hide_icon(ui_sdcardIcon);
 
 #ifdef LVGL_LOOP
   guiHandler();
