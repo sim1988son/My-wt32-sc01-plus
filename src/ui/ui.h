@@ -38,24 +38,25 @@ void ui_init(void);
 
 void ui_startScreen_screen_init(void);
 void ui_settingsScreen_screen_init(void);
-void ui_appScreen_screen_init(void);
-void ui_wifiScreen_screen_init(void);
+// void ui_appScreen_screen_init(void);
+// void ui_wifiScreen_screen_init(void);
 //void buildPWMsgBox(void);
 
 void openStart(void);
 void openSettings(void);
 
-void openAppWifi(void);
+// void openAppWifi(void);
 
-void openAppFiles(void);
+// void openAppFiles(void);
 
 // void openAppDateTime(void);
 // void AppDateTime();
 
-void checked_statusbar(int i, bool _statusBarIkon);
-void checked_sdcard(bool status);
-void checked_wifi(bool status);
-
+// void checked_statusbar(int i, bool _statusBarIkon);
+// void checked_sdcard(bool status);
+// void checked_wifi(bool status);
+void statusBar_hide_icon(int i);
+void statusBar_show_icon(int i);
 void statusbar_refresh(void);
 
 static void timerForNetwork(lv_timer_t *timer);
@@ -76,6 +77,8 @@ lv_obj_t *create_mbox(lv_obj_t *parent, const char *text, uint16_t xPos, uint16_
 lv_obj_t *create_mboxbtn(lv_obj_t *parent, lv_event_cb_t callback, bool bbtn);
 lv_obj_t *create_button_obj(lv_obj_t *parent, lv_event_cb_t callback, uint16_t yPos);
 lv_obj_t *create_roller(lv_obj_t *parent, uint16_t roll, uint16_t xPos, uint16_t yPos);
+lv_obj_t *create_obj(lv_obj_t *parent, uint16_t xPos, uint16_t yPos, uint16_t width, uint16_t height, lv_color_t color);
+lv_obj_t *create_obj_color(lv_obj_t *parent, uint16_t xPos, uint16_t yPos, uint16_t w, uint32_t colorp, lv_event_cb_t callback);
 
 // lv_obj_t * ui_app_notificationPanel();
 lv_obj_t * ui_app_statusBar();
