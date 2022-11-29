@@ -1,5 +1,5 @@
 # My-wt32-sc01-plus
-! [As of 2022-10-21](/images/home.jpg)
+![As of 2022-10-21](images/home.jpg)
 
 ## Features
 - [x] Settings 
