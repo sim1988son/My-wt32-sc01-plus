@@ -1,6 +1,8 @@
 # My-wt32-sc01-plus
 
 ## Features
+ [x] Settings 
+ [x] Wifi
 
 
 ## Inspiration
