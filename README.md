@@ -1,5 +1,8 @@
 # My-wt32-sc01-plus
 
+## Features
+
+
 ## Inspiration
 This project was created on the basis of <br>
 [fbiego/Lumia-ESP32](https://github.com/fbiego/Lumia-ESP32)<br> 
